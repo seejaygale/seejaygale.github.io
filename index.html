@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Carl James Tañeza — AI Creative Producer</title>
+<meta name="description" content="Portfolio of Carl James Tañeza — AI Creative Producer, DTC & VSL editor, and Senior Video Editor building ad creative systems for e-commerce brands." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Archivo:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     CARL JAMES TAÑEZA — PORTFOLIO
+     A monochrome-green world: deep pine ground, layered tonal
+     greens, mist-white type. Signature motif: every project is
+     framed as a "generation spec" — the vernacular of the work.
+     ============================================================ */
+
+  :root{
+    --pine:      #0C1F16;   /* page ground */
+    --pine-2:    #10281C;   /* raised surface */
+    --moss:      #1A3A28;   /* card surface / borders */
+    --fern:      #2F5C42;   /* mid structural green */
+    --sage:      #86A893;   /* muted text */
+    --mint:      #C7E6D0;   /* secondary text */
+    --mist:      #ECF5EE;   /* primary text */
+    --chartreuse:#C9F26E;   /* single interactive accent — used sparingly */
+
+    --font-display:'Fraunces', Georgia, serif;
+    --font-body:'Archivo', -apple-system, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, monospace;
+
+    --max: 1180px;
+    --pad: clamp(20px, 5vw, 56px);
+    --radius: 14px;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--pine);
+    color:var(--mist);
+    font-family:var(--font-body);
+    font-weight:300;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* faint organic grain so the green ground doesn't feel flat */
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;
+  }
+
+  ::selection{ background:var(--chartreuse); color:var(--pine); }
+  a{ color:inherit; }
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--chartreuse); outline-offset:3px; border-radius:4px;
+  }
+
+  .wrap{ max-width:var(--max); margin:0 auto; padding-left:var(--pad); padding-right:var(--pad); position:relative; z-index:1; }
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    backdrop-filter:blur(14px);
+    background:color-mix(in srgb, var(--pine) 78%, transparent);
+    border-bottom:1px solid color-mix(in srgb, var(--fern) 40%, transparent);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:16px var(--pad);
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-mark{
+    font-family:var(--font-display); font-weight:600; font-size:1.05rem;
+    letter-spacing:.01em; text-decoration:none;
+  }
+  .nav-mark em{ font-style:italic; color:var(--chartreuse); }
+  .nav-links{ display:flex; gap:28px; list-style:none; }
+  .nav-links a{
+    font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; text-decoration:none; color:var(--sage);
+    transition:color .25s ease;
+  }
+  .nav-links a:hover{ color:var(--chartreuse); }
+  @media (max-width:640px){ .nav-links{ display:none; } }
+
+  /* ---------- hero ---------- */
+  .hero{ min-height:100svh; display:flex; align-items:center; position:relative; padding-top:96px; padding-bottom:clamp(70px, 9vw, 120px); }
+  /* soft botanical glow behind the headline */
+  .hero::before{
+    content:""; position:absolute; top:-15%; right:-20%;
+    width:70vw; height:70vw; max-width:900px; max-height:900px;
+    background:radial-gradient(circle at center, rgba(60,120,80,.28), transparent 62%);
+    filter:blur(40px); pointer-events:none;
+  }
+  .eyebrow{
+    font-family:var(--font-mono); font-size:.72rem; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--sage); margin-bottom:26px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .eyebrow::before{ content:""; width:34px; height:1px; background:var(--fern); }
+  .hero h1{
+    font-family:var(--font-display); font-weight:340;
+    font-size:clamp(2.7rem, 7.4vw, 5.6rem);
+    line-height:1.04; letter-spacing:-.015em; max-width:15ch;
+  }
+  .hero h1 em{ font-style:italic; font-weight:420; color:var(--mint); }
+  .hero-sub{
+    margin-top:30px; max-width:52ch; color:var(--sage); font-size:1.06rem;
+  }
+  .hero-sub strong{ color:var(--mint); font-weight:500; }
+
+  /* the signature: identity written as a generation spec */
+  .spec-card{
+    margin-top:48px; display:inline-block;
+    font-family:var(--font-mono); font-size:.78rem; line-height:1.9;
+    color:var(--sage);
+    background:color-mix(in srgb, var(--pine-2) 85%, transparent);
+    border:1px solid var(--moss); border-radius:var(--radius);
+    padding:20px 26px;
+  }
+  .spec-card .k{ color:var(--fern); }
+  .spec-card .v{ color:var(--mint); }
+  .spec-card .hl{ color:var(--chartreuse); }
+
+  .hero-cta{ margin-top:44px; display:flex; gap:18px; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--font-mono); font-size:.74rem; letter-spacing:.14em;
+    text-transform:uppercase; text-decoration:none;
+    padding:14px 26px; border-radius:100px; transition:all .25s ease;
+  }
+  .btn-solid{ background:var(--chartreuse); color:var(--pine); font-weight:500; }
+  .btn-solid:hover{ transform:translateY(-2px); box-shadow:0 8px 30px rgba(201,242,110,.22); }
+  .btn-ghost{ border:1px solid var(--fern); color:var(--mint); }
+  .btn-ghost:hover{ border-color:var(--chartreuse); color:var(--chartreuse); }
+
+  /* ---------- section scaffolding ---------- */
+  section{ padding:clamp(80px, 12vw, 140px) 0; }
+  .sec-head{ margin-bottom:clamp(40px, 6vw, 72px); }
+  .sec-head h2{
+    font-family:var(--font-display); font-weight:340;
+    font-size:clamp(1.9rem, 4.4vw, 3.1rem); line-height:1.12; letter-spacing:-.01em;
+    max-width:22ch;
+  }
+  .sec-head h2 em{ font-style:italic; color:var(--mint); }
+
+  /* ---------- ticker ---------- */
+  .ticker{
+    border-top:1px solid var(--moss); border-bottom:1px solid var(--moss);
+    padding:16px 0; overflow:hidden; white-space:nowrap;
+  }
+  .ticker-track{ display:inline-flex; gap:56px; animation:scroll 46s linear infinite; }
+  .ticker span{
+    font-family:var(--font-mono); font-size:.72rem; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--fern);
+  }
+  .ticker span b{ color:var(--sage); font-weight:400; }
+  @keyframes scroll{ to{ transform:translateX(-50%); } }
+
+  /* ---------- work grid ---------- */
+  .work-grid{ display:grid; grid-template-columns:repeat(12, 1fr); gap:22px; }
+  .project{
+    grid-column:span 6;
+    background:var(--pine-2); border:1px solid var(--moss); border-radius:var(--radius);
+    overflow:hidden; text-decoration:none; display:flex; flex-direction:column;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s ease;
+  }
+  .project:hover{ transform:translateY(-5px); border-color:var(--fern); }
+  .project.wide{ grid-column:span 12; flex-direction:row; }
+  .project.wide .p-media{ flex:1.15; aspect-ratio:auto; min-height:480px; }
+  .project.wide .p-body{ flex:1; align-self:center; }
+  @media (max-width:860px){
+    .project, .project.wide{ grid-column:span 12; flex-direction:column; }
+    .project.wide .p-media{ aspect-ratio:4/5; min-height:0; }
+  }
+
+  /* MEDIA SLOT — replace the inner placeholder with an <img> or <video>
+     from the Drive portfolio. Keep object-fit:cover. */
+  .p-media{
+    aspect-ratio:4/5; position:relative; overflow:hidden;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(70,140,95,.35), transparent 55%),
+      linear-gradient(160deg, var(--moss), var(--pine-2));
+  }
+  .p-media img, .p-media video{
+    width:100%; height:100%; object-fit:contain; display:block;
+    transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .project:hover .p-media img, .project:hover .p-media video{ transform:scale(1.04); }
+  .p-media .placeholder{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-size:.7rem; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--fern);
+  }
+  .p-media .frame-tag{
+    position:absolute; top:14px; left:14px;
+    font-family:var(--font-mono); font-size:.64rem; letter-spacing:.12em;
+    color:var(--mint); background:rgba(12,31,22,.72); backdrop-filter:blur(6px);
+    padding:5px 11px; border-radius:100px; border:1px solid var(--moss);
+  }
+  .sound-toggle{
+    position:absolute; bottom:14px; right:14px; z-index:3;
+    width:42px; height:42px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(12,31,22,.72); backdrop-filter:blur(6px);
+    border:1px solid var(--moss); color:var(--mint);
+    cursor:pointer; transition:border-color .25s ease, color .25s ease, transform .2s ease;
+  }
+  .sound-toggle:hover{ border-color:var(--chartreuse); color:var(--chartreuse); transform:scale(1.06); }
+  .sound-toggle.on{ border-color:var(--chartreuse); color:var(--chartreuse); }
+  .sound-toggle svg{ width:18px; height:18px; display:block; }
+
+  .p-body{ padding:26px 28px 30px; }
+  .p-meta{
+    font-family:var(--font-mono); font-size:.66rem; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--fern); margin-bottom:12px;
+    display:flex; gap:10px; flex-wrap:wrap;
+  }
+  .p-meta span:not(:last-child)::after{ content:"·"; margin-left:10px; color:var(--moss); }
+  .p-body h3{
+    font-family:var(--font-display); font-weight:420; font-size:1.45rem;
+    line-height:1.2; margin-bottom:10px; letter-spacing:-.005em;
+  }
+  .p-body p{ color:var(--sage); font-size:.94rem; max-width:52ch; }
+
+  /* ---------- capabilities ---------- */
+  .cap-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:22px; }
+  .cap{
+    background:var(--pine-2); border:1px solid var(--moss); border-radius:var(--radius);
+    padding:30px 28px; transition:border-color .3s ease;
+  }
+  .cap:hover{ border-color:var(--fern); }
+  .cap h3{
+    font-family:var(--font-display); font-weight:420; font-size:1.2rem;
+    margin-bottom:14px;
+  }
+  .cap ul{ list-style:none; }
+  .cap li{
+    color:var(--sage); font-size:.9rem; padding:7px 0;
+    border-bottom:1px solid color-mix(in srgb, var(--moss) 60%, transparent);
+  }
+  .cap li:last-child{ border-bottom:none; }
+  .cap li b{ color:var(--mint); font-weight:500; }
+
+  /* ---------- pipeline ---------- */
+  .pipeline{ display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:1px; background:var(--moss); border:1px solid var(--moss); border-radius:var(--radius); overflow:hidden; }
+  .stage{ background:var(--pine-2); padding:30px 26px; }
+  .stage .s-tag{
+    font-family:var(--font-mono); font-size:.66rem; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--chartreuse); display:block; margin-bottom:12px;
+  }
+  .stage h3{ font-family:var(--font-display); font-weight:420; font-size:1.1rem; margin-bottom:8px; }
+  .stage p{ color:var(--sage); font-size:.86rem; }
+
+  /* ---------- about ---------- */
+  .about-grid{ display:grid; grid-template-columns:1.2fr .8fr; gap:clamp(36px, 6vw, 80px); align-items:start; }
+  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; } }
+  .about-copy p{ color:var(--mint); font-size:1.08rem; margin-bottom:20px; max-width:56ch; }
+  .about-copy p em{ font-family:var(--font-display); font-style:italic; }
+  .fact-list{ list-style:none; border-top:1px solid var(--moss); }
+  .fact-list li{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:16px 0; border-bottom:1px solid var(--moss);
+    font-size:.9rem;
+  }
+  .fact-list .fk{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--fern); padding-top:3px; }
+  .fact-list .fv{ color:var(--mint); text-align:right; max-width:30ch; }
+
+  .about-side{ display:flex; flex-direction:column; gap:26px; }
+  .portrait-frame{
+    position:relative; border-radius:var(--radius); overflow:hidden;
+    border:1px solid var(--moss);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+  }
+  .portrait-frame::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(180deg, transparent 55%, rgba(12,31,22,.55));
+    mix-blend-mode:multiply;
+  }
+  .portrait-frame img{ width:100%; height:auto; display:block; aspect-ratio:4/5; object-fit:cover;
+    filter:saturate(1.05) contrast(1.02); }
+
+  /* ---------- contact ---------- */
+  .contact{ text-align:center; }
+  .contact h2{
+    font-family:var(--font-display); font-weight:340;
+    font-size:clamp(2.2rem, 6vw, 4.2rem); line-height:1.08; letter-spacing:-.015em;
+  }
+  .contact h2 em{ font-style:italic; color:var(--chartreuse); }
+  .contact p{ color:var(--sage); margin:24px auto 40px; max-width:44ch; }
+
+  footer{
+    border-top:1px solid var(--moss); padding:32px 0;
+  }
+  .foot-inner{
+    display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
+    font-family:var(--font-mono); font-size:.68rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--fern);
+  }
+  .foot-inner a{ color:var(--sage); text-decoration:none; transition:color .25s; }
+  .foot-inner a:hover{ color:var(--chartreuse); }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{ animation:none; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+    .project, .p-media img, .p-media video, .btn-solid{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top">Carl James <em>Tañeza</em></a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">AI Creative Producer · DTC &amp; VSL Editor — Manila, PH</p>
+    <h1>Ad creative, <em>generated</em> — then engineered to perform.</h1>
+    <p class="hero-sub">
+      I build <strong>AI-driven creative systems</strong> for direct-to-consumer brands —
+      turning briefs into stills, motion, and finished spots with structured prompts,
+      MCP-connected tooling, and pipelines that ship every week. Senior video &amp; VSL
+      editor by craft, systems-builder by instinct.
+    </p>
+
+    <!-- Signature: identity written in the vernacular of the work -->
+    <div class="spec-card" aria-label="Profile written as a generation spec">
+      <span class="k">{</span><br>
+      &nbsp;&nbsp;<span class="k">"subject":</span> <span class="v">"Carl James Tañeza"</span>,<br>
+      &nbsp;&nbsp;<span class="k">"role":</span> <span class="v">"ai creative producer · senior video editor"</span>,<br>
+      &nbsp;&nbsp;<span class="k">"stack":</span> <span class="v">["higgsfield", "claude+mcp", "seedance_2", "n8n", "capcut"]</span>,<br>
+      &nbsp;&nbsp;<span class="k">"style":</span> <span class="v">"cinematic, UGC-native, DTC-ready"</span>,<br>
+      &nbsp;&nbsp;<span class="k">"negative_prompt":</span> <span class="v">"generic, template, unshippable"</span>,<br>
+      &nbsp;&nbsp;<span class="k">"status":</span> <span class="hl">"open to collaboration"</span><br>
+      <span class="k">}</span>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="#work">View selected work</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span><b>Higgsfield</b> — image + video gen</span>
+    <span><b>Claude + MCP</b> — connected tooling</span>
+    <span><b>Seedance 2</b> — cinematic video</span>
+    <span><b>n8n</b> — pipeline automation</span>
+    <span><b>CapCut</b> — edit + finish</span>
+    <span><b>VSL &amp; UGC</b> — direct-response</span>
+    <span><b>JSON prompt systems</b></span>
+    <span><b>Higgsfield</b> — image + video gen</span>
+    <span><b>Claude + MCP</b> — connected tooling</span>
+    <span><b>Seedance 2</b> — cinematic video</span>
+    <span><b>n8n</b> — pipeline automation</span>
+    <span><b>CapCut</b> — edit + finish</span>
+    <span><b>VSL &amp; UGC</b> — direct-response</span>
+    <span><b>JSON prompt systems</b></span>
+  </div>
+</div>
+
+<!-- ================= WORK ================= -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Selected work</p>
+      <h2>DTC brands produced end-to-end, <em>brief to broadcast-ready.</em></h2>
+    </div>
+
+    <div class="work-grid">
+
+      <!-- MEDIA SLOTS: replace each .placeholder div with
+           <img src="assets/your-file.jpg" alt="..."> or
+           <video src="assets/your-file.mp4" muted loop autoplay playsinline></video> -->
+
+      <a class="project wide reveal" href="#">
+        <div class="p-media">
+          <span class="frame-tag">HERO SPOT · 9:16</span>
+          <video src="assets/melbet.mp4" poster="assets/melbet-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
+        </div>
+        <div class="p-body">
+          <div class="p-meta"><span>iGaming</span><span>Hero video</span><span>Higgsfield + Seedance 2</span></div>
+          <h3>MelBet — Hero Video</h3>
+          <p>Flagship spot for a global betting brand. Mid-production angle pivot executed without
+          losing the delivery window — rebuilt shot structure, prompts, and end frames around the
+          new concept while keeping the edit timeline intact.</p>
+        </div>
+      </a>
+
+      <a class="project reveal" href="#">
+        <div class="p-media">
+          <span class="frame-tag">UGC + HERO · 9:16</span>
+          <video src="assets/fursure.mp4" poster="assets/fursure-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
+        </div>
+        <div class="p-body">
+          <div class="p-meta"><span>Pet wellness</span><span>UGC + hero video</span><span>Higgsfield + Seedance 2</span></div>
+          <h3>Fursure — Dog Pendant</h3>
+          <p>Creative for a clip-on wellness pendant that protects dogs from fleas and ticks with a
+          plant-based, waterproof design lasting up to a year. Warm outdoor lifestyle plates and
+          hero product shots built to make natural pet care feel effortless.</p>
+        </div>
+      </a>
+
+      <a class="project reveal" href="#">
+        <div class="p-media">
+          <span class="frame-tag">BEAUTY · 30s</span>
+          <video src="assets/faccelove.mp4" poster="assets/faccelove-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
+        </div>
+        <div class="p-body">
+          <div class="p-meta"><span>Beauty / cosmetics</span><span>UGC video</span><span>Higgsfield + CapCut</span></div>
+          <h3>Faccelove — IronEye Mascara</h3>
+          <p>Direct-response beauty creative for a metal-brush mascara and lash serum — close-up
+          application beats and before/after lash reveals cut for a clean, high-retention hook.</p>
+        </div>
+      </a>
+
+      <a class="project reveal" href="#">
+        <div class="p-media">
+          <span class="frame-tag">STILLS + MOTION</span>
+          <video src="assets/coldchain.mp4" poster="assets/coldchain-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
+        </div>
+        <div class="p-body">
+          <div class="p-meta"><span>Research peptides</span><span>Campaign</span><span>Higgsfield + Seedance 2</span></div>
+          <h3>Cold Chain Aminos</h3>
+          <p>Clean, clinical product storytelling for a research-peptide brand — 99%+ HPLC-verified
+          purity, third-party tested with a Certificate of Analysis. Icy, lab-grade visual language
+          that sells precision and trust to a discerning research audience.</p>
+        </div>
+      </a>
+
+      <a class="project reveal" href="#">
+        <div class="p-media">
+          <span class="frame-tag">VSL · DIRECT RESPONSE</span>
+          <video src="assets/labsh3at.mp4" poster="assets/labsh3at-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
+        </div>
+        <div class="p-body">
+          <div class="p-meta"><span>Collectibles · ready.cards</span><span>VSL + ads</span><span>Higgsfield + CapCut</span></div>
+          <h3>LabsH3at — ready.cards</h3>
+          <p>Video creative for a pack-opening platform for PSA-graded trading cards with
+          provably-fair, on-chain odds. High-energy rip moments and hype-driven edits built to
+          convert collectors watching live drops.</p>
+        </div>
+      </a>
+
+      <a class="project reveal" href="#">
+        <div class="p-media">
+          <span class="frame-tag">RECOVERY · UGC</span>
+          <video src="assets/aveliaa.mp4" poster="assets/aveliaa-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
+        </div>
+        <div class="p-body">
+          <div class="p-meta"><span>Wellness / recovery</span><span>UGC video</span><span>Higgsfield + Seedance 2</span></div>
+          <h3>Aveliaa — Tissue Massager</h3>
+          <p>Energetic recovery creative for a deep-tissue percussion massager — post-workout and
+          everyday-tension scenes showing the device melting muscle knots, framed to make fast
+          muscle relief feel effortless and within reach.</p>
+        </div>
+      </a>
+
+      <a class="project reveal" href="#">
+        <div class="p-media">
+          <span class="frame-tag">PRODUCT · UGC</span>
+          <video src="assets/kittyspout.mp4" poster="assets/kittyspout-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
+        </div>
+        <div class="p-body">
+          <div class="p-meta"><span>Pet products</span><span>UGC + product video</span><span>Higgsfield + CapCut</span></div>
+          <h3>KittySpout / DoggySpout — Pet Fountains</h3>
+          <p>Creative for a vet-recommended stainless-steel wireless fountain brand trusted by 600k+
+          pet owners — from cat fountains to their first dog-specific launch. Flowing-water hero
+          shots and pets-drinking moments that make the hydration benefit obvious and adorable.</p>
+        </div>
+      </a>
+
+      <a class="project wide reveal" href="#">
+        <div class="p-media">
+          <span class="frame-tag">GENERATIVE POSTERS</span>
+          <img src="assets/anthology.jpg" alt="Cassette Futurism — Anthology of Aesthetics poster No. 08" loading="lazy" />
+        </div>
+        <div class="p-body">
+          <div class="p-meta"><span>Personal</span><span>Coded art series</span><span>Design systems</span></div>
+          <h3>Anthology of Aesthetics</h3>
+          <p>An ongoing poster series exploring visual systems entirely in code — each aesthetic
+          built as a coded composition and rendered to print-grade output. A personal playground
+          for typography, palette, and layout beyond the brief.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section id="capabilities">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Capabilities</p>
+      <h2>One producer, <em>four disciplines.</em></h2>
+    </div>
+    <div class="cap-grid">
+      <div class="cap reveal">
+        <h3>AI Generation</h3>
+        <ul>
+          <li><b>Image + video</b> — Higgsfield</li>
+          <li><b>Cinematic video</b> — Seedance 2</li>
+          <li>4K upscaling &amp; reframing workflows</li>
+          <li>Curation &amp; direction across models</li>
+        </ul>
+      </div>
+      <div class="cap reveal">
+        <h3>Prompt Systems</h3>
+        <ul>
+          <li><b>JSON-structured prompts</b> as standard format</li>
+          <li>Negative-prompt tokenization strategy</li>
+          <li>Start/end-frame control for stable motion</li>
+          <li>Character-budget engineering per model</li>
+        </ul>
+      </div>
+      <div class="cap reveal">
+        <h3>Editing &amp; Finish</h3>
+        <ul>
+          <li><b>Senior video &amp; VSL</b> editing</li>
+          <li><b>CapCut</b> edit, cut, and finish</li>
+          <li>UGC &amp; direct-response ad structure</li>
+          <li>Branded storyboard one-pagers</li>
+        </ul>
+      </div>
+      <div class="cap reveal">
+        <h3>Systems &amp; Automation</h3>
+        <ul>
+          <li><b>Claude + MCP</b> connected tooling</li>
+          <li><b>n8n</b> multi-platform pipelines</li>
+          <li>Higgsfield driven straight from chat</li>
+          <li>Repeatable, briefs-to-assets workflows</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Process</p>
+      <h2>From brief to shipped ad, <em>the same disciplined path.</em></h2>
+    </div>
+    <div class="pipeline reveal">
+      <div class="stage">
+        <span class="s-tag">Brief</span>
+        <h3>Angle &amp; hook</h3>
+        <p>Lock the persuasion angle and hook before a single frame is generated.</p>
+      </div>
+      <div class="stage">
+        <span class="s-tag">Prompt</span>
+        <h3>Structured spec</h3>
+        <p>Every shot written as a JSON prompt — repeatable, reviewable, versionable.</p>
+      </div>
+      <div class="stage">
+        <span class="s-tag">Generate</span>
+        <h3>Plates &amp; motion</h3>
+        <p>Stills and video plates generated, curated, and upscaled to delivery spec.</p>
+      </div>
+      <div class="stage">
+        <span class="s-tag">Composite</span>
+        <h3>Precision post</h3>
+        <p>UI, branding, text, and VO layered in post — AI never fakes the product.</p>
+      </div>
+      <div class="stage">
+        <span class="s-tag">Ship</span>
+        <h3>Deliver &amp; learn</h3>
+        <p>Assets delivered with storyboards; results feed the next creative round.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">About</p>
+      <h2>Where creative taste meets <em>production engineering.</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>I'm an <em>AI creative producer</em> and senior video editor working across
+        direct-to-consumer brands — the kind of work where creative has to be sharp, fast,
+        and built to convert.</p>
+        <p>My lane is the full production stack: I take a client brief and carry it through
+        prompt architecture, AI generation, editing, and final delivery — from scroll-stopping
+        UGC to long-form VSLs. I use <em>Claude with MCP</em> to my advantage, connecting it
+        directly to tools like Higgsfield so generation, iteration, and delivery all live in
+        one connected workflow instead of a dozen disconnected tabs.</p>
+        <p>Outside client work, I explore design systems for their own sake — coded poster series,
+        landing page experiments, and whatever aesthetic is currently living rent-free in my head.</p>
+      </div>
+      <div class="about-side reveal">
+        <!-- Portrait -->
+        <div class="portrait-frame">
+          <img src="assets/portrait.jpg" alt="Carl James Tañeza" />
+        </div>
+        <ul class="fact-list">
+          <li><span class="fk">Base</span><span class="fv">Metro Manila, Philippines</span></li>
+          <li><span class="fk">Role</span><span class="fv">AI Creative Producer · DTC &amp; VSL Editor</span></li>
+          <li><span class="fk">Craft</span><span class="fv">Senior Video Editor</span></li>
+          <li><span class="fk">Formats</span><span class="fv">UGC · VSL · Hero spots · Product</span></li>
+          <li><span class="fk">Stack</span><span class="fv">Higgsfield · Claude+MCP · n8n · Seedance 2 · CapCut</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+  <div class="wrap reveal">
+    <p class="eyebrow" style="justify-content:center;">Contact</p>
+    <h2>Have a brief that needs <em>shipping?</em></h2>
+    <p>Open to creative production work, AI pipeline consulting, and interesting collaborations.</p>
+    <div class="hero-cta" style="justify-content:center;">
+      <a class="btn btn-solid" href="mailto:taneza.carljames@gmail.com">taneza.carljames@gmail.com</a>
+      <a class="btn btn-ghost" href="https://wa.me/639951894987" target="_blank" rel="noopener">WhatsApp +63 995 189 4987</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/carl-james-ta%C3%B1eza-8987ba291" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1_cbDG4IAqxeHWSFzi8TXaVntHtmlpG8R?usp=drive_link" target="_blank" rel="noopener">Full portfolio · Drive ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© 2026 Carl James Tañeza</span>
+    <span>Designed &amp; produced with the same pipeline it describes</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal — respects reduced-motion via CSS override
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Sound toggles — one per video card; unmuting one mutes the others
+  const iconMuted = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
+  const iconSound = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>';
+
+  const vids = document.querySelectorAll('.p-media video');
+  vids.forEach(v => {
+    const btn = document.createElement('button');
+    btn.className = 'sound-toggle';
+    btn.setAttribute('aria-label', 'Toggle sound');
+    btn.innerHTML = iconMuted;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault(); e.stopPropagation();
+      const wasMuted = v.muted;
+      // mute everything first
+      vids.forEach(o => {
+        o.muted = true;
+        const b = o.parentElement.querySelector('.sound-toggle');
+        if (b) { b.innerHTML = iconMuted; b.classList.remove('on'); }
+      });
+      if (wasMuted) { v.muted = false; btn.innerHTML = iconSound; btn.classList.add('on'); }
+    });
+    v.parentElement.appendChild(btn);
+  });
+</script>
+
+</body>
+</html>
