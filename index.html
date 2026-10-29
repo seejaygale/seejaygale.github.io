@@ -313,6 +313,7 @@
     .project, .p-media img, .p-media video, .btn-solid{ transition:none; }
   }
 </style>
+<link rel="stylesheet" href="work.css">
 </head>
 <body>
 
@@ -383,119 +384,23 @@
 <!-- ================= WORK ================= -->
 <section id="work">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Selected work</p>
-      <h2>DTC brands produced end-to-end, <em>brief to broadcast-ready.</em></h2>
+    <div class="work-intro reveal"><div><p class="eyebrow">Selected work</p><h2>Different formats.<br><em>One creative point of view.</em></h2></div><p>A selection of films, creator-led ads and static campaigns. Explore a format, then take a closer look.</p></div>
+    <div class="work-tabs" role="tablist" aria-label="Portfolio format">
+      <button type="button" id="video-tab" role="tab" aria-selected="true" aria-controls="video-panel">Motion <span>12 films</span></button>
+      <button type="button" id="static-tab" role="tab" aria-selected="false" aria-controls="static-panel" tabindex="-1">Stills <span>28 images</span></button>
     </div>
-
-    <div class="work-grid">
-
-      <a class="project wide reveal" href="#work" aria-label="Root — local farms app video">
-        <div class="p-media">
-          <span class="frame-tag">APP CAMPAIGN · 9:16</span>
-          <video src="assets/root.mp4" poster="assets/root-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
-        </div>
-        <div class="p-body">
-          <div class="p-meta"><span>Local food</span><span>App creative</span><span>US market</span></div>
-          <h3>Root — Local Farms App</h3>
-          <p>A video campaign for Root, an app connecting people in the US with local farms and fresh food. The spot brings the farm-to-table idea into a clear, approachable mobile story.</p>
-        </div>
-      </a>
-
-      <a class="project reveal" href="#">
-        <div class="p-media">
-          <span class="frame-tag">UGC + HERO · 9:16</span>
-          <video src="assets/fursure.mp4" poster="assets/fursure-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
-        </div>
-        <div class="p-body">
-          <div class="p-meta"><span>Pet wellness</span><span>UGC + hero video</span><span>Higgsfield + Seedance 2</span></div>
-          <h3>Fursure — Dog Pendant</h3>
-          <p>Creative for a clip-on wellness pendant that protects dogs from fleas and ticks with a
-          plant-based, waterproof design lasting up to a year. Warm outdoor lifestyle plates and
-          hero product shots built to make natural pet care feel effortless.</p>
-        </div>
-      </a>
-
-      <a class="project reveal" href="#">
-        <div class="p-media">
-          <span class="frame-tag">BEAUTY · 30s</span>
-          <video src="assets/faccelove.mp4" poster="assets/faccelove-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
-        </div>
-        <div class="p-body">
-          <div class="p-meta"><span>Beauty / cosmetics</span><span>UGC video</span><span>Higgsfield + CapCut</span></div>
-          <h3>Faccelove — IronEye Mascara</h3>
-          <p>Direct-response beauty creative for a metal-brush mascara and lash serum — close-up
-          application beats and before/after lash reveals cut for a clean, high-retention hook.</p>
-        </div>
-      </a>
-
-      <a class="project reveal" href="#work" aria-label="Cloud Topper — premium mattress video">
-        <div class="p-media">
-          <span class="frame-tag">PRODUCT FILM</span>
-          <video src="assets/cloud-topper.mp4" poster="assets/cloud-topper-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
-        </div>
-        <div class="p-body">
-          <div class="p-meta"><span>Sleep / home</span><span>Product video</span><span>UK market</span></div>
-          <h3>Cloud Topper — Premium Mattress</h3>
-          <p>Product storytelling for a premium mattress aimed at the UK market, built around the feel of comfort and a more considered sleep experience.</p>
-        </div>
-      </a>
-
-      <a class="project reveal" href="#work" aria-label="Deenintr — modest clothing video">
-        <div class="p-media">
-          <span class="frame-tag">MODEST ACTIVEWEAR</span>
-          <video src="assets/deenintr.mp4" poster="assets/deenintr-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
-        </div>
-        <div class="p-body">
-          <div class="p-meta"><span>Modest fashion</span><span>Brand video</span><span>Muslim audiences</span></div>
-          <h3>Deenintr — Covered Clothing</h3>
-          <p>Video creative for a store specializing in clothing designed for coverage, pairing movement and everyday wear with the brand’s modest style.</p>
-        </div>
-      </a>
-
-      <a class="project reveal" href="#">
-        <div class="p-media">
-          <span class="frame-tag">RECOVERY · UGC</span>
-          <video src="assets/aveliaa.mp4" poster="assets/aveliaa-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
-        </div>
-        <div class="p-body">
-          <div class="p-meta"><span>Wellness / recovery</span><span>UGC video</span><span>Higgsfield + Seedance 2</span></div>
-          <h3>Aveliaa — Tissue Massager</h3>
-          <p>Energetic recovery creative for a deep-tissue percussion massager — post-workout and
-          everyday-tension scenes showing the device melting muscle knots, framed to make fast
-          muscle relief feel effortless and within reach.</p>
-        </div>
-      </a>
-
-      <a class="project reveal" href="#">
-        <div class="p-media">
-          <span class="frame-tag">PRODUCT · UGC</span>
-          <video src="assets/kittyspout.mp4" poster="assets/kittyspout-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
-        </div>
-        <div class="p-body">
-          <div class="p-meta"><span>Pet products</span><span>UGC + product video</span><span>Higgsfield + CapCut</span></div>
-          <h3>KittySpout / DoggySpout — Pet Fountains</h3>
-          <p>Creative for a vet-recommended stainless-steel wireless fountain brand trusted by 600k+
-          pet owners — from cat fountains to their first dog-specific launch. Flowing-water hero
-          shots and pets-drinking moments that make the hydration benefit obvious and adorable.</p>
-        </div>
-      </a>
-
-      <a class="project wide reveal" href="#work" aria-label="DoggySpout — cinematic ad">
-        <div class="p-media">
-          <span class="frame-tag">CINEMATIC AD · 16:9</span>
-          <video src="assets/doggyspout-cinematic.mp4" poster="assets/doggyspout-cinematic-poster.jpg" muted loop autoplay playsinline preload="metadata"></video>
-        </div>
-        <div class="p-body">
-          <div class="p-meta"><span>Pet products</span><span>Cinematic ad</span><span>DoggySpout</span></div>
-          <h3>DoggySpout — Cinematic Ad</h3>
-          <p>A cinematic spot for DoggySpout, the dog-focused counterpart to KittySpout. Product and pet moments carry the story with a more polished visual treatment.</p>
-        </div>
-      </a>
-
+    <div id="video-panel" role="tabpanel" aria-labelledby="video-tab">
+      <div class="cinema"><div class="film-stage"><video id="main-film" controls playsinline preload="none" aria-label="Selected portfolio film"></video></div><div class="film-info"><div><p id="film-format" class="eyebrow"></p><h3 id="film-title"></h3><p id="film-description"></p></div><div class="film-nav"><span id="film-count" aria-live="polite"></span><button type="button" id="prev-film" class="round-control" aria-label="Previous video">←</button><button type="button" id="next-film" class="round-control" aria-label="Next video">→</button></div></div></div>
+      <div class="shelf-heading"><p>THE FILM COLLECTION</p><span>Select a film below</span></div><div id="film-shelf" class="film-shelf" aria-label="Choose a portfolio video"></div>
+    </div>
+    <div id="static-panel" role="tabpanel" aria-labelledby="static-tab" hidden>
+      <div id="collection-tabs" class="collection-tabs" aria-label="Image collections"></div>
+      <div class="gallery-heading"><div><h3 id="collection-title"></h3><p id="collection-description"></p></div><div class="gallery-controls"><span id="gallery-count"></span><button type="button" class="round-control" id="gallery-prev" aria-label="Scroll gallery left">←</button><button type="button" class="round-control" id="gallery-next" aria-label="Scroll gallery right">→</button></div></div>
+      <div class="image-rail" id="image-rail" aria-label="Static ad gallery"></div><p class="gallery-hint">Swipe or use the arrows to explore. Select an image to view full size.</p>
     </div>
   </div>
 </section>
+<dialog id="image-viewer" aria-labelledby="viewer-title"><div class="viewer-top"><p id="viewer-title"></p><button type="button" id="close-viewer" class="round-control" aria-label="Close image viewer">×</button></div><div class="viewer-stage"><button type="button" id="viewer-prev" class="round-control" aria-label="Previous image">←</button><img id="viewer-image" alt=""><button type="button" id="viewer-next" class="round-control" aria-label="Next image">→</button></div><p id="viewer-count" aria-live="polite"></p></dialog>
 
 <!-- ================= CAPABILITIES ================= -->
 <section id="capabilities">
@@ -642,37 +547,6 @@
   </div>
 </footer>
 
-<script>
-  // Scroll reveal — respects reduced-motion via CSS override
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // Sound toggles — one per video card; unmuting one mutes the others
-  const iconMuted = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
-  const iconSound = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>';
-
-  const vids = document.querySelectorAll('.p-media video');
-  vids.forEach(v => {
-    const btn = document.createElement('button');
-    btn.className = 'sound-toggle';
-    btn.setAttribute('aria-label', 'Toggle sound');
-    btn.innerHTML = iconMuted;
-    btn.addEventListener('click', (e) => {
-      e.preventDefault(); e.stopPropagation();
-      const wasMuted = v.muted;
-      // mute everything first
-      vids.forEach(o => {
-        o.muted = true;
-        const b = o.parentElement.querySelector('.sound-toggle');
-        if (b) { b.innerHTML = iconMuted; b.classList.remove('on'); }
-      });
-      if (wasMuted) { v.muted = false; btn.innerHTML = iconSound; btn.classList.add('on'); }
-    });
-    v.parentElement.appendChild(btn);
-  });
-</script>
-
+<script src="work-data.js"></script><script src="work.js"></script>
 </body>
 </html>
